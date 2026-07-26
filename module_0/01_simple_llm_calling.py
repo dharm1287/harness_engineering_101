@@ -13,7 +13,7 @@ Notice everything this script CANNOT do:
 This is exactly the gap a "harness" exists to fill: the LLM call itself
 never changes much across the rest of the course -- what changes is the CODE
 we wrap around it (the harness).
-This script uses Groq's native Python client (not the OpenAI SDK).
+This script uses Groq's native Python client.
 """
 import os
 from dotenv import load_dotenv
