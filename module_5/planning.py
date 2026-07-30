@@ -146,7 +146,7 @@ array of strings, nothing else -- no markdown, no explanation.
 Task: {user_task}
 """
 
-    response = chat_with_retry(
+    response = client.chat.completions.create(
         model=MODEL,
         messages=[{"role": "user", "content": planning_prompt}],
         **LLM_OPTIONS,
@@ -197,7 +197,7 @@ def execute_subtask(subtask: str, subtask_number: int) -> str:
     ]
 
     for turn in range(1, MAX_TURNS_PER_SUBTASK + 1):
-        response = chat_with_retry(
+        response = client.chat.completions.create(
             model=MODEL,
             messages=messages,
             tools=TOOLS_SCHEMA,
@@ -250,7 +250,7 @@ Here are the results of each subtask that was completed to accomplish it:
 Write one clear, concise final answer for the user that combines these
 results appropriately.
 """
-    response = chat_with_retry(
+    response = client.chat.completions.create(
         model=MODEL,
         messages=[{"role": "user", "content": synthesis_prompt}],
         **LLM_OPTIONS,
