@@ -1,0 +1,50 @@
+[
+  {
+    "run_id": "fb307010",
+    "step": 1,
+    "type": "llm_call",
+    "timestamp": "2026-08-03T14:32:37.726687+00:00",
+    "input": "2 messages (last: Calculate 42-/8, then search the web for 'agent tracing best practices', then summarize both.)",
+    "output": "tool_calls=['calculate', 'search_web']",
+    "duration_ms": 581.3
+  },
+  {
+    "run_id": "fb307010",
+    "step": 1,
+    "type": "tool_call",
+    "timestamp": "2026-08-03T14:32:37.727131+00:00",
+    "input": {
+      "tool": "calculate",
+      "args": {
+        "expression": "42/8"
+      }
+    },
+    "output": "5.25",
+    "duration_ms": 0.0,
+    "is_error": false
+  },
+  {
+    "run_id": "fb307010",
+    "step": 1,
+    "type": "tool_call",
+    "timestamp": "2026-08-03T14:32:37.727232+00:00",
+    "input": {
+      "tool": "search_web",
+      "args": {
+        "query": "agent tracing best practices"
+      }
+    },
+    "output": "[STUB RESULT] Pretend web search results for: 'agent tracing best practices'.",
+    "duration_ms": 0.0,
+    "is_error": false
+  },
+  {
+    "run_id": "fb307010",
+    "step": 2,
+    "type": "llm_call",
+    "timestamp": "2026-08-03T14:32:38.104214+00:00",
+    "input": "5 messages (last: [STUB RESULT] Pretend web search results for: 'agent tracing best practices'.)",
+    "output": "text=The calculation result is 5.25. The web search results for 'agent tracing best practices' are not provided as this is a simulated environment, but in ",
+    "duration_ms": 376.8
+  }
+]
