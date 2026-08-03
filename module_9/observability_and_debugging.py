@@ -254,7 +254,7 @@ if __name__ == "__main__":
 
     tracer = Tracer()
 
-    task = "Calculate 42/8, then search the web for 'agent tracing best practices', then summarize both."
+    task = "Calculate 42/0 then search the web for 'agent tracing best practices', then summarize both."
     print(f"USER TASK: {task}")
 
     result = run_agent_loop(task, tracer)
